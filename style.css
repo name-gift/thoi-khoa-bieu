@@ -1,0 +1,1028 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --bg:#eef3f9;
+  --card:#ffffff;
+  --text:#172033;
+  --muted:#64748b;
+  --primary:#2563eb;
+  --primary2:#1d4ed8;
+  --border:#d9e1ec;
+  --orange:#f28a2e;
+  --green:#70ad47;
+  --week:#f8d6a9;
+  --danger:#dc2626;
+  --shadow:0 10px 30px rgba(15,23,42,.08);
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* =====================================================
+   TOPBAR
+===================================================== */
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:linear-gradient(135deg,#1d4ed8,#2563eb);
+  color:#fff;
+  padding:14px 4%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  box-shadow:0 5px 18px rgba(30,64,175,.22);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+
+.brand-icon{
+  width:48px;
+  height:48px;
+  flex:0 0 48px;
+  border-radius:14px;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.2);
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:13px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12);
+}
+
+.brand h1{
+  font-size:21px;
+  line-height:1.2;
+  white-space:nowrap;
+}
+
+.brand p{
+  font-size:13px;
+  opacity:.85;
+  margin-top:4px;
+  line-height:1.3;
+}
+
+.top-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.btn{
+  border:0;
+  border-radius:10px;
+  padding:10px 14px;
+  cursor:pointer;
+  font-weight:700;
+  font-size:13px;
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background .2s ease,
+    opacity .2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 5px 14px rgba(0,0,0,.12);
+}
+
+.btn:active{
+  transform:translateY(0);
+}
+
+.btn:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+  transform:none;
+  box-shadow:none;
+}
+
+.btn.primary{
+  background:#fff;
+  color:#1d4ed8;
+}
+
+.btn.primary:hover{
+  background:#f8fafc;
+}
+
+.btn.danger{
+  color:var(--danger);
+}
+
+.btn.ghost{
+  background:rgba(255,255,255,.95);
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+  width:min(1450px,94%);
+  margin:22px auto 50px;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  box-shadow:var(--shadow);
+  margin-bottom:16px;
+}
+
+.status-left{
+  min-width:220px;
+}
+
+.status-left > div{
+  display:flex;
+  align-items:center;
+}
+
+.status-dot{
+  display:inline-block;
+  width:10px;
+  height:10px;
+  flex:0 0 10px;
+  border-radius:50%;
+  background:#94a3b8;
+  margin-right:8px;
+  box-shadow:0 0 0 3px rgba(148,163,184,.12);
+}
+
+.status-dot.ok{
+  background:#16a34a;
+  box-shadow:0 0 0 3px rgba(22,163,74,.12);
+}
+
+.status-card strong{
+  font-size:14px;
+}
+
+.status-card small{
+  display:block;
+  color:var(--muted);
+  margin:5px 0 0 18px;
+  font-size:12px;
+}
+
+/* =====================================================
+   TABS
+===================================================== */
+
+.tabs{
+  display:flex;
+  gap:8px;
+  margin-bottom:18px;
+  overflow-x:auto;
+  padding:2px;
+  scrollbar-width:none;
+}
+
+.tabs::-webkit-scrollbar{
+  display:none;
+}
+
+.tab{
+  white-space:nowrap;
+  border:1px solid var(--border);
+  background:#fff;
+  color:#334155;
+  border-radius:10px;
+  padding:10px 16px;
+  font-weight:700;
+  font-size:13px;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.tab:hover{
+  border-color:#93b4f7;
+  color:var(--primary);
+  background:#eff6ff;
+}
+
+.tab.active{
+  background:var(--primary);
+  color:#fff;
+  border-color:var(--primary);
+  box-shadow:0 4px 12px rgba(37,99,235,.2);
+}
+
+/* =====================================================
+   BỘ LỌC
+===================================================== */
+
+.schedule-filter{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:16px 18px;
+  margin-bottom:18px;
+  display:flex;
+  align-items:flex-start;
+  gap:24px;
+  box-shadow:var(--shadow);
+}
+
+.filter-group{
+  flex:1;
+  min-width:0;
+}
+
+.filter-group > label{
+  display:block;
+  margin-bottom:10px;
+  font-size:13px;
+  font-weight:800;
+  color:#334155;
+}
+
+/* =====================================================
+   WEEK DROPDOWN
+===================================================== */
+
+.week-dropdown{
+  position:relative;
+  width:100%;
+  max-width:320px;
+}
+
+.week-dropdown-btn{
+  width:100%;
+  min-height:40px;
+  border:1px solid var(--border);
+  background:#f8fafc;
+  color:#334155;
+  border-radius:10px;
+  padding:9px 12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  cursor:pointer;
+  font-size:13px;
+  font-weight:700;
+  text-align:left;
+  transition:.2s ease;
+}
+
+.week-dropdown-btn:hover{
+  border-color:#93b4f7;
+  background:#eff6ff;
+  color:var(--primary);
+}
+
+.week-dropdown-btn:focus{
+  outline:none;
+  border-color:var(--primary);
+  box-shadow:0 0 0 3px rgba(37,99,235,.1);
+}
+
+.week-arrow{
+  font-size:16px;
+  color:#64748b;
+  transition:transform .2s ease;
+}
+
+.week-dropdown.open .week-arrow{
+  transform:rotate(180deg);
+}
+
+/* =====================================================
+   WEEK LIST
+===================================================== */
+
+.week-dropdown-list{
+  position:absolute;
+  top:calc(100% + 7px);
+  left:0;
+  right:0;
+  z-index:80;
+  display:none;
+  max-height:300px;
+  overflow-y:auto;
+  padding:8px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+  box-shadow:0 14px 35px rgba(15,23,42,.16);
+}
+
+.week-dropdown.open .week-dropdown-list{
+  display:block;
+}
+
+.week-dropdown-list::-webkit-scrollbar{
+  width:6px;
+}
+
+.week-dropdown-list::-webkit-scrollbar-thumb{
+  background:#cbd5e1;
+  border-radius:10px;
+}
+
+.week-option{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding:9px 10px;
+  border-radius:8px;
+  cursor:pointer;
+  user-select:none;
+  font-size:13px;
+  font-weight:700;
+  color:#334155;
+  transition:.15s ease;
+}
+
+.week-option:hover{
+  background:#eff6ff;
+  color:var(--primary);
+}
+
+.week-option input{
+  width:16px;
+  height:16px;
+  margin:0;
+  accent-color:var(--primary);
+  cursor:pointer;
+}
+
+.week-option:has(input:checked){
+  background:#eff6ff;
+  color:var(--primary);
+}
+
+/* =====================================================
+   CA HỌC
+===================================================== */
+
+.shift-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.check-item{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  padding:9px 12px;
+  min-width:90px;
+  border:1px solid #dbe2ea;
+  border-radius:9px;
+  background:#f8fafc;
+  color:#334155;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  user-select:none;
+  transition:
+    background .2s ease,
+    border-color .2s ease,
+    color .2s ease,
+    box-shadow .2s ease;
+}
+
+.check-item:hover{
+  border-color:#93b4f7;
+  background:#eff6ff;
+  color:#1d4ed8;
+}
+
+.check-item input{
+  width:16px;
+  height:16px;
+  margin:0;
+  padding:0;
+  accent-color:var(--primary);
+  cursor:pointer;
+}
+
+.check-item:has(input:checked){
+  background:#eff6ff;
+  border-color:var(--primary);
+  color:#1d4ed8;
+  box-shadow:0 2px 7px rgba(37,99,235,.12);
+}
+
+/* =====================================================
+   APP
+===================================================== */
+
+#app{
+  width:100%;
+}
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.section{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  margin-bottom:20px;
+}
+
+.section-head{
+  padding:18px 20px;
+  background:linear-gradient(135deg,#eff6ff,#fff);
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.section-head h2{
+  font-size:22px;
+  line-height:1.3;
+}
+
+.section-head p{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:5px;
+}
+
+.badge{
+  padding:7px 10px;
+  border-radius:999px;
+  background:#dbeafe;
+  color:#1d4ed8;
+  font-size:12px;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+/* =====================================================
+   11E3
+===================================================== */
+
+.green-title{
+  background:var(--green);
+  color:#fff;
+  text-align:center;
+  font-size:20px;
+  font-weight:800;
+  padding:10px;
+}
+
+.motto{
+  text-align:center;
+  font-style:italic;
+  font-weight:800;
+  padding:14px;
+  color:#334155;
+}
+
+/* =====================================================
+   TABLE 11E3
+===================================================== */
+
+.schedule-wrap{
+  width:100%;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+.schedule{
+  width:100%;
+  border-collapse:collapse;
+  min-width:900px;
+}
+
+.schedule th,
+.schedule td{
+  border:1px solid #cbd5e1;
+  padding:10px 9px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.schedule thead th{
+  background:var(--orange);
+  color:#fff;
+  font-size:14px;
+  font-weight:800;
+}
+
+.schedule thead th:first-child{
+  background:#ee7927;
+}
+
+.schedule .time{
+  background:#f8fafc;
+  text-align:left;
+  white-space:nowrap;
+  font-weight:700;
+}
+
+.schedule .rule{
+  background:#f8fafc;
+  font-style:italic;
+  text-align:left;
+}
+
+.schedule td{
+  font-size:14px;
+  line-height:1.35;
+}
+
+.subject{
+  font-weight:800;
+  color:#172033;
+}
+
+.teacher{
+  font-size:12px;
+  color:#475569;
+  margin-top:3px;
+}
+
+.room{
+  font-size:12px;
+  color:#1e40af;
+  margin-top:3px;
+  font-weight:700;
+}
+
+.empty{
+  color:#94a3b8;
+  text-align:center;
+  font-style:italic;
+}
+
+/* =====================================================
+   52ĐT
+===================================================== */
+
+.week-block{
+  border-top:1px solid var(--border);
+}
+
+.week-block:first-child{
+  border-top:0;
+}
+
+.week-head{
+  background:var(--week);
+  padding:11px 16px;
+  font-size:17px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.week-head.current{
+  color:#dc2626;
+}
+
+.week-table-wrap{
+  width:100%;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+.week-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:850px;
+}
+
+.week-table th,
+.week-table td{
+  border:1px solid #cbd5e1;
+  padding:9px;
+  vertical-align:top;
+}
+
+.week-table th{
+  background:#f8fafc;
+  text-align:center;
+  font-weight:800;
+}
+
+.day-name{
+  font-weight:900;
+  text-align:center;
+  width:90px;
+}
+
+.session{
+  min-height:72px;
+}
+
+.session-label{
+  font-size:11px;
+  font-weight:900;
+  color:#64748b;
+  text-transform:uppercase;
+  margin-bottom:5px;
+}
+
+/* =====================================================
+   NOTE
+===================================================== */
+
+.note{
+  padding:15px 18px;
+  border-top:1px solid var(--border);
+  background:#fffdf7;
+  color:#475569;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.note b{
+  color:#111827;
+}
+
+/* =====================================================
+   TỔNG HỢP
+===================================================== */
+
+.all-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.all-grid .section{
+  margin-bottom:0;
+}
+
+/* =====================================================
+   EMPTY / LOADING
+===================================================== */
+
+.loading,
+.no-data{
+  padding:40px 20px;
+  text-align:center;
+  color:var(--muted);
+}
+
+.loading{
+  font-weight:700;
+}
+
+.no-data{
+  font-style:italic;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+  padding:25px 4%;
+  text-align:center;
+  color:#64748b;
+  font-style:italic;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-size:13px;
+}
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  background:#0f172a;
+  color:#fff;
+  padding:12px 15px;
+  border-radius:10px;
+  box-shadow:var(--shadow);
+  opacity:0;
+  transform:translateY(15px);
+  pointer-events:none;
+  transition:.25s ease;
+  z-index:200;
+  max-width:360px;
+  font-size:13px;
+  line-height:1.4;
+}
+
+.toast.show{
+  opacity:1;
+  transform:none;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:900px){
+
+  .topbar{
+    align-items:flex-start;
+    flex-direction:column;
+    padding:13px 4%;
+  }
+
+  .top-actions{
+    width:100%;
+    justify-content:flex-start;
+  }
+
+  .status-card{
+    align-items:stretch;
+    flex-direction:column;
+  }
+
+  .schedule-filter{
+    flex-direction:column;
+    gap:16px;
+  }
+
+  .filter-group{
+    width:100%;
+  }
+
+  .week-dropdown{
+    max-width:none;
+  }
+
+  .all-grid{
+    grid-template-columns:1fr;
+  }
+
+  .section-head{
+    align-items:flex-start;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:560px){
+
+  .topbar{
+    padding:12px 3%;
+  }
+
+  .brand{
+    width:100%;
+  }
+
+  .brand-icon{
+    width:44px;
+    height:44px;
+    flex-basis:44px;
+    border-radius:12px;
+  }
+
+  .brand h1{
+    font-size:18px;
+  }
+
+  .brand p{
+    font-size:11px;
+  }
+
+  .top-actions{
+    gap:6px;
+  }
+
+  .btn{
+    padding:9px 11px;
+    font-size:12px;
+  }
+
+  .container{
+    width:96%;
+    margin-top:12px;
+    margin-bottom:35px;
+  }
+
+  .status-card{
+    padding:13px;
+    border-radius:13px;
+  }
+
+  .status-card strong{
+    font-size:13px;
+  }
+
+  .status-card small{
+    font-size:11px;
+  }
+
+  .tabs{
+    margin-bottom:12px;
+  }
+
+  .tab{
+    padding:9px 13px;
+    font-size:12px;
+  }
+
+  .schedule-filter{
+    padding:14px;
+    border-radius:13px;
+    gap:14px;
+  }
+
+  .filter-group > label{
+    font-size:12px;
+    margin-bottom:8px;
+  }
+
+  .week-dropdown-btn{
+    min-height:38px;
+    font-size:12px;
+    padding:8px 10px;
+  }
+
+  .week-dropdown-list{
+    max-height:260px;
+  }
+
+  .week-option{
+    padding:8px;
+    font-size:12px;
+  }
+
+  .shift-list{
+    gap:6px;
+  }
+
+  .check-item{
+    padding:8px 10px;
+    min-width:82px;
+    font-size:12px;
+  }
+
+  .check-item input{
+    width:15px;
+    height:15px;
+  }
+
+  .section{
+    border-radius:14px;
+    margin-bottom:14px;
+  }
+
+  .section-head{
+    padding:14px;
+  }
+
+  .section-head h2{
+    font-size:18px;
+  }
+
+  .section-head p{
+    font-size:11px;
+  }
+
+  .badge{
+    font-size:10px;
+    padding:6px 8px;
+  }
+
+  .green-title{
+    font-size:17px;
+    padding:9px;
+  }
+
+  .motto{
+    padding:11px;
+    font-size:13px;
+  }
+
+  .schedule th,
+  .schedule td,
+  .week-table th,
+  .week-table td{
+    padding:8px 6px;
+  }
+
+  .schedule td{
+    font-size:13px;
+  }
+
+  .teacher,
+  .room{
+    font-size:11px;
+  }
+
+  .week-head{
+    font-size:14px;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:10px 12px;
+  }
+
+  .session{
+    min-height:65px;
+  }
+
+  .session-label{
+    font-size:10px;
+  }
+
+  .note{
+    padding:13px;
+    font-size:12px;
+  }
+
+  footer{
+    padding:20px 4%;
+    font-size:11px;
+  }
+
+  .toast{
+    left:12px;
+    right:12px;
+    bottom:12px;
+    max-width:none;
+  }
+}
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media(max-width:380px){
+
+  .brand h1{
+    font-size:16px;
+  }
+
+  .brand p{
+    font-size:10px;
+  }
+
+  .brand-icon{
+    width:40px;
+    height:40px;
+    flex-basis:40px;
+    font-size:11px;
+  }
+
+  .top-actions{
+    flex-direction:column;
+    width:100%;
+  }
+
+  .top-actions .btn{
+    width:100%;
+  }
+
+  .check-item{
+    min-width:76px;
+    padding:7px 8px;
+  }
+}

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+
+  <meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+<meta
+name="theme-color"
+content="#2563eb"
+
+>
+
+  <title>
+    Thời khóa biểu - Cao đẳng Điện tử Điện lạnh Hà Nội
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="topbar">
+
+  <div class="brand">
+
+
+<div class="brand-icon">
+  TKB
+</div>
+
+<div>
+
+  <h1>
+    Thời khóa biểu
+  </h1>
+
+  <p>
+    Cao đẳng Điện tử - Điện lạnh Hà Nội
+  </p>
+
+</div>
+
+
+  </div>
+
+  <div class="top-actions">
+
+
+<button
+  id="syncBtn"
+  class="btn primary"
+  type="button"
+>
+  ↻ Đồng bộ dữ liệu
+</button>
+
+
+<button
+  id="clearBtn"
+  class="btn danger ghost"
+  type="button"
+>
+  Xóa dữ liệu máy
+</button>
+
+
+  </div>
+
+</header>
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="container">
+
+  <!-- ===================================================
+       TRẠNG THÁI
+  ==================================================== -->
+
+  <section class="status-card">
+
+
+<div class="status-left">
+
+  <div>
+
+    <span
+      id="statusDot"
+      class="status-dot"
+    ></span>
+
+    <strong id="storageStatus">
+      Đang dùng dữ liệu mặc định
+    </strong>
+
+  </div>
+
+
+  <small id="syncStatus">
+    Chưa có dữ liệu đồng bộ từ API
+  </small>
+
+</div>
+
+
+  </section>
+
+  <!-- ===================================================
+       TAB LỚP
+  ==================================================== -->
+
+  <nav class="tabs">
+
+
+<button
+  class="tab active"
+  data-view="all"
+  type="button"
+>
+  Tổng hợp
+</button>
+
+
+<button
+  class="tab"
+  data-view="11e3"
+  type="button"
+>
+  Lớp 11E3
+</button>
+
+
+<button
+  class="tab"
+  data-view="52dt"
+  type="button"
+>
+  Lớp 52ĐT
+</button>
+
+
+  </nav>
+
+  <!-- ===================================================
+       BỘ LỌC TUẦN / CA
+  ==================================================== -->
+
+  <section class="schedule-filter">
+
+
+<!-- =================================================
+     TUẦN HỌC
+================================================== -->
+
+<div class="filter-group">
+
+  <label>
+    Tuần học
+  </label>
+
+
+  <div class="week-dropdown">
+
+
+    <!-- NÚT CHỌN TUẦN -->
+
+    <button
+      type="button"
+      id="weekDropdownBtn"
+      class="week-dropdown-btn"
+    >
+
+      <span id="selectedWeekText">
+        Chọn tuần học
+      </span>
+
+      <span class="week-arrow">
+        ▾
+      </span>
+
+    </button>
+
+
+
+    <!-- DANH SÁCH TUẦN -->
+
+    <div
+      id="weekDropdownList"
+      class="week-dropdown-list"
+    >
+
+
+      <label class="week-option">
+
+        <input
+          type="checkbox"
+          name="week"
+          value="1"
+        >
+
+        <span>
+          Tuần 1
+        </span>
+
+      </label>
+
+
+      <label class="week-option">
+
+        <input
+          type="checkbox"
+          name="week"
+          value="2"
+        >
+
+        <span>
+          Tuần 2
+        </span>
+
+      </label>
+
+
+      <label class="week-option">
+
+        <input
+          type="checkbox"
+          name="week"
+          value="3"
+        >
+
+        <span>
+          Tuần 3
+        </span>
+
+      </label>
+
+
+      <label class="week-option">
+
+        <input
+          type="checkbox"
+          name="week"
+          value="4"
+        >
+
+        <span>
+          Tuần 4
+        </span>
+
+      </label>
+
+
+      <label class="week-option">
+
+        <input
+          type="checkbox"
+          name="week"
+          value="5"
+        >
+
+        <span>
+          Tuần 5
+        </span>
+
+      </label>
+
+
+      <label class="week-option">
+
+        <input
+          type="checkbox"
+          name="week"
+          value="6"
+        >
+
+        <span>
+          Tuần 6
+        </span>
+
+      </label>
+
+
+      <label class="week-option">
+
+        <input
+          type="checkbox"
+          name="week"
+          value="7"
+        >
+
+        <span>
+          Tuần 7
+        </span>
+
+      </label>
+
+
+      <label class="week-option">
+
+        <input
+          type="checkbox"
+          name="week"
+          value="8"
+        >
+
+        <span>
+          Tuần 8
+        </span>
+
+      </label>
+
+
+      <label class="week-option">
+
+        <input
+          type="checkbox"
+          name="week"
+          value="9"
+        >
+
+        <span>
+          Tuần 9
+        </span>
+
+      </label>
+
+
+      <label class="week-option">
+
+        <input
+          type="checkbox"
+          name="week"
+          value="10"
+        >
+
+        <span>
+          Tuần 10
+        </span>
+
+      </label>
+
+
+      <label class="week-option">
+
+        <input
+          type="checkbox"
+          name="week"
+          value="11"
+        >
+
+        <span>
+          Tuần 11
+        </span>
+
+      </label>
+
+
+      <label class="week-option">
+
+        <input
+          type="checkbox"
+          name="week"
+          value="12"
+        >
+
+        <span>
+          Tuần 12
+        </span>
+
+      </label>
+
+
+      <label class="week-option">
+
+        <input
+          type="checkbox"
+          name="week"
+          value="13"
+        >
+
+        <span>
+          Tuần 13
+        </span>
+
+      </label>
+
+
+      <label class="week-option">
+
+        <input
+          type="checkbox"
+          name="week"
+          value="14"
+        >
+
+        <span>
+          Tuần 14
+        </span>
+
+      </label>
+
+
+      <label class="week-option">
+
+        <input
+          type="checkbox"
+          name="week"
+          value="15"
+        >
+
+        <span>
+          Tuần 15
+        </span>
+
+      </label>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =================================================
+     CA HỌC
+================================================== -->
+
+<div class="filter-group">
+
+  <label>
+    Ca học
+  </label>
+
+
+  <div class="shift-list">
+
+
+    <label class="check-item">
+
+      <input
+        type="checkbox"
+        name="shift"
+        value="1"
+      >
+
+      <span>
+        Ca 1
+      </span>
+
+    </label>
+
+
+    <label class="check-item">
+
+      <input
+        type="checkbox"
+        name="shift"
+        value="2"
+      >
+
+      <span>
+        Ca 2
+      </span>
+
+    </label>
+
+
+  </div>
+
+</div>
+
+
+  </section>
+
+  <!-- ===================================================
+       APP
+  ==================================================== -->
+
+  <section id="app"></section>
+
+</main>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+  <span>
+    HỌC CHO CHÍNH MÌNH
+  </span>
+
+<span id="updatedText"></span>
+
+</footer>
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+  id="toast"
+  class="toast"
+></div>
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
